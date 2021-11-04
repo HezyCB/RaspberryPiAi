@@ -7,7 +7,7 @@ from shlex import quote
 import re
 import os
 
-chatbot = ChatBot('Kina')
+chatbot = ChatBot('Neon')
 chatbot.set_trainer(ChatterBotCorpusTrainer)
 
 r = sr.Recognizer()
@@ -27,7 +27,7 @@ while True:
             with mic as source:
 
                 r.adjust_for_ambient_noise(source)
-                print(' #Lausche')
+                print(' #Listening')
                 audio = r.listen(source)
 
             voiceInput = r.recognize_google(audio, language='de-DE')
@@ -36,13 +36,13 @@ while True:
 
         except sr.UnknownValueError:
             print(' #Error')
-            #speak('Das habe ich leider nicht verstanden.')
+            #speak('I do not understand')
 
     if voiceInput == 'Computer':
 
-        print(' #Unterhaltung begonnen')
-        speak('Ich höre')
-        print('Kina: Ich höre')
+        print(' #Conversation Started')
+        speak('I am listening')
+        print('Neon: I am listening')
 
         isConversation = True
 
@@ -55,29 +55,29 @@ while True:
                     with mic as source:
 
                         r.adjust_for_ambient_noise(source)
-                        print(' #Lausche')
-                        #speak('Ich höre!')
+                        print(' #Listening')
+                        #speak('I am listening!')
                         audio = r.listen(source)
-                        print(' #Verarbeite das Gehörte')
+                        print(' I am understanding...')
 
 
                     voiceInput = r.recognize_google(audio, language='de-DE')
                     confirmedInput = True
                 except sr.UnknownValueError:
                     print(' #Error')
-                    speak('Das habe ich leider nicht verstanden.')
-                    print('Kina: Das habe ich leider nicht verstanden.')
+                    speak('I did not understad that.')
+                    print('Neon: I did not understad that.')
 
             print('Du: ' + voiceInput)
 
-            if voiceInput == 'Ruhe':
+            if voiceInput == 'Quiet':
                 isConversation = False
-                speak('Ok. Ich warte auf das Stichwort.')
-                print('Kina: Ok. Ich warte auf das Stichwort.')
-                print(' #Unterhaltung beendet')
+                speak('Ok. I am waiting.')
+                print('Kina: Ok. I am waiting.')
+                print(' #Coversation paused')
 
             else:
                 answ = str(chatbot.get_response(voiceInput))
 
-                print(str('Kina: ') + answ)
+                print(str('Neon: ') + answ)
                 speak(quote(answ))
