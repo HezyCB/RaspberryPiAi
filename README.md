@@ -1,8 +1,8 @@
 # RaspberryPiAi
 
-The RaspberryPiAi also named Kina is a Chatbot with voice recognition and text to speech output. 
+The RaspberryPiAi also named Neon is a Chatbot with voice recognition and text to speech output. 
 
-The RaspberryPiAi is currently just in german so don't get confused
+The RaspberryPiAi has been translated to english so sorry if the translation is buggy.
 
 To run this programm you need to install these packages:
 
