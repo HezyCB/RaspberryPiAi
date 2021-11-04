@@ -7,7 +7,7 @@ from shlex import quote
 import re
 import os
 
-chatbot = ChatBot('Neon')
+chatbot = ChatBot('Kira')
 chatbot.set_trainer(ChatterBotCorpusTrainer)
 
 r = sr.Recognizer()
@@ -73,7 +73,7 @@ while True:
             if voiceInput == 'Quiet':
                 isConversation = False
                 speak('Ok. I am waiting.')
-                print('Kina: Ok. I am waiting.')
+                print('Neon: Ok. I am waiting.')
                 print(' #Coversation paused')
 
             else:
