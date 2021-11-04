@@ -9,5 +9,5 @@ chatterbot = ChatBot("Kina")
 chatterbot.set_trainer(ChatterBotCorpusTrainer)
 
 chatterbot.train(
-    "chatterbot.corpus.german"
+    "chatterbot.corpus.english"
 )
