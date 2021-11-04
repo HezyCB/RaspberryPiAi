@@ -5,7 +5,7 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
-chatterbot = ChatBot("Kina")
+chatterbot = ChatBot("Neon")
 chatterbot.set_trainer(ChatterBotCorpusTrainer)
 
 chatterbot.train(
